@@ -1,40 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UsuarioController;
-use App\Http\Controllers\CarroController;
+use App\Http\Controllers\VeiculoController;
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\AluguelController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-*/
-
 Route::get('/', function () {
-    return redirect()->route('usuarios.index');
+    return redirect('/veiculos');
 });
 
-/*
-|--------------------------------------------------------------------------
-| USUÁRIOS
-|--------------------------------------------------------------------------
-*/
-
-Route::resource('usuarios', UsuarioController::class);
-
-/*
-|--------------------------------------------------------------------------
-| CARROS
-|--------------------------------------------------------------------------
-*/
-
-Route::resource('carros', CarroController::class);
-
-/*
-|--------------------------------------------------------------------------
-| ALUGUÉIS
-|--------------------------------------------------------------------------
-*/
-
-Route::resource('aluguels', AluguelController::class);
+Route::resource('veiculos', VeiculoController::class);
+Route::resource('clientes', ClienteController::class);
+Route::resource('alugueis', AluguelController::class);
