@@ -6,7 +6,7 @@ use App\Http\Controllers\CarroController;
 use App\Http\Controllers\AluguelController;
 
 Route::get('/', function () {
-    return redirect()->route('usuarios.index');
+    return redirect('/usuarios');
 });
 
 Route::resource('usuarios', UsuarioController::class);
