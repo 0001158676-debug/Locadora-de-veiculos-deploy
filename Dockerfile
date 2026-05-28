@@ -6,8 +6,4 @@ ENV WEBROOT=/var/www/html/public
 
 RUN composer install --no-dev --optimize-autoloader
 
-RUN php artisan config:clear
-RUN php artisan route:clear
-RUN php artisan view:clear
-
-CMD php artisan migrate --force && /start.sh
+CMD php artisan config:clear && php artisan route:clear && php artisan view:clear && php artisan migrate --force && /start.sh
